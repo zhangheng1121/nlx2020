@@ -1,0 +1,29 @@
+package com.atguigu.springcloud.controller;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
+
+/**
+ * @Project_Name: cloud2020
+ * @Introduce:
+ * @Author: zhangheng
+ * @Date: 2020/11/3 15:03
+ * @Version 1.0
+ */
+@RestController
+@Slf4j
+public class PaymentController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @RequestMapping(value = "/payment/zk")
+    public String paymentzk(){
+        return "springcloud with zookeeper: " + serverPort + "\t" + UUID.randomUUID().toString();
+    }
+
+}
