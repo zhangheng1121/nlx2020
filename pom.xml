@@ -128,6 +128,6 @@
     2 接口用 PostMan
     3 cmd用 curl
         不带任何属性:    curl http://localhost:9527/payment/lb
-        带cookie:  curl http://localhost:9527/payment/lb  - -cookie "username=zzyy"   //cmd输入命令时，cookie前的两个 - 符号，中间不要空格
+        带cookie:  curl http://localhost:9527/payment/lb  - -cookie "username=zzyy"   // cmd输入命令时，cookie前的两个 - 符号，中间不要空格
         带Request: curl http://localhost:9527/payment/lb  -H "X-Request-Id:123"
  -->
