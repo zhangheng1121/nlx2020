@@ -24,6 +24,7 @@
         <module>cloud-consumer-hystrix-dashboard9001</module>
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-config-center-3344</module>
+        <module>cloud-config-client-3355</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -131,4 +132,7 @@
         不带任何属性:    curl http://localhost:9527/payment/lb
         带cookie:  curl http://localhost:9527/payment/lb  - -cookie "username=zzyy"   // cmd输入命令时，cookie前的两个 - 符号，中间不要空格
         带Request: curl http://localhost:9527/payment/lb  -H "X-Request-Id:123"
+    4 公共的配置文件更新，服务端可以更新，但是客户端不能更新，需要运维人员手动调用post请求，刷新
+        curl -X POST "http://localhost:3355/actuator/refresh"
+
  -->
