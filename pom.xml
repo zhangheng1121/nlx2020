@@ -25,6 +25,7 @@
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-config-center-3344</module>
         <module>cloud-config-client-3355</module>
+        <module>cloud-config-client-3366</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -134,5 +135,14 @@
         带Request: curl http://localhost:9527/payment/lb  -H "X-Request-Id:123"
     4 公共的配置文件更新，服务端可以更新，但是客户端不能更新，需要运维人员手动调用post请求，刷新
         curl -X POST "http://localhost:3355/actuator/refresh"
-
+        curl -X POST "http://localhost:3366/actuator/refresh"
+        4.1 如果配置了总线bus + rabbitMQ，只要刷新服务端一次性就可以
+        curl -X POST "http://localhost:3344/actuator/bus-refresh"
+        4.2 如果只想通知其中的一个或者多个
+        curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"
+    5 RabbitMQ安装好以后要到 F:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.14\sbin 文件夹下，然后执行cmd，输入下面一行命令
+      rabbitmq-plugins enable rabbitmq_management
+      查看是否启动成功，地址：http://localhost:15672/
+      账号/密码 guest/guest
+      win开始菜单里有 start / end 功能
  -->
