@@ -30,6 +30,10 @@
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-stream-rabbitmq-consumer8803</module>
         <module>cloudalibaba-provider-payment9001</module>
+        <module>cloudalibaba-provider-payment9002</module>
+        <module>cloudalibaba-consumer-nacos-order83</module>
+        <module>cloudalibaba-config-nacos-client3377</module>
+        <module>cloudalibaba-sentinel-service8401</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -149,4 +153,8 @@
       查看是否启动成功，地址：http://localhost:15672/
       账号/密码 guest/guest
       win开始菜单里有 start / end 功能
+    6 Nacos 切换 AP 和 CP 的curl命令
+        curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'
+
+    7 sentinel启动 ：java -jar sentinel-***.jar
  -->
